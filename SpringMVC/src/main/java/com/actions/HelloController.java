@@ -12,8 +12,9 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(final ModelMap model) {
 
-        model.addAttribute("message", "Spring 3 MVC Hello World");
+        model.addAttribute("message", "Spring 3 MVC Hello World ! ");
         model.addAttribute("title", "Title model hello world");
+        System.out.println("Test SVN commit");
         return "hello";
 
     }
