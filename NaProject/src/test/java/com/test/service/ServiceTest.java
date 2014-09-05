@@ -24,8 +24,8 @@ import com.service.impl.ServiceImpl;
 public class ServiceTest {
 
     @Test
-    public void testAfficher() {
+    public void testCalculer() {
         IService service = new ServiceImpl();
-        Assert.assertEquals(new Integer(3), service.calculer(1, 2));
+        Assert.assertTrue(3==service.calculer(1, 2));
     }
 }
