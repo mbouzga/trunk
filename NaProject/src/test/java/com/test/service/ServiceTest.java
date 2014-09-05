@@ -26,6 +26,8 @@ public class ServiceTest {
     @Test
     public void testCalculer() {
         IService service = new ServiceImpl();
-        Assert.assertTrue(3==service.calculer(1, 2));
+        Assert.assertTrue(3 == service.calculer(1, 2));
+
+        Assert.assertFalse(4 == service.calculer(1, 2));
     }
 }
