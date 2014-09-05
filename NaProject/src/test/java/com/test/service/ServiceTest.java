@@ -25,6 +25,7 @@ public class ServiceTest {
 
     @Test
     public void testCalculer() {
+    	System.out.println("Je t'aime ... ");
         IService service = new ServiceImpl();
         Assert.assertTrue(3 == service.calculer(1, 2));
 
