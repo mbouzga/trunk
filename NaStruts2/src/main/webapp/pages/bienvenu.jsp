@@ -13,12 +13,12 @@
 	<h1>Welcome</h1>
 	<h4>Voici votre fiche d'inscription :</h4>
 	<table>
-		<thead>
-			<td>Nom</td>
-			<td>E-mail</td>
-			<td>Filliere</td>
-			<td>Scolarité avant</td>
-		</thead>
+		<tr>
+			<th>Nom</th>
+			<th>E-mail</th>
+			<th>Filliere</th>
+			<th>Scolarité avant</th>
+		</tr>
 		<tr>
 			<td><s:property value="name"/></td>
 			<td><s:property value="email"/></td>
