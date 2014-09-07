@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Acceuil</title>
 </head>
 <body bgcolor="orange">
 	<s:form namespace="/" action="login">
@@ -17,6 +17,8 @@
 		<tr><td></td> <td><s:submit value="Go !"/></td></tr>
 	</tbody>
 	</table>
+	
+	<a href="pages/Inscription.jsp">Sign-in</a>
 	
 	</s:form>
 </body>

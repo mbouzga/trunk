@@ -12,6 +12,11 @@
 			<result name="success">/ok.jsp</result>
 			<result name="error">/ko.jsp</result>
 		</action>
+		<action name="signin" class="com.actions.LoginAction"
+				method="SignIn">
+				<result name="success">pages/bienvenu.jsp</result>
+				<result name="error">/ko.jsp</result>
+		</action>
 	</package>
 
 </struts>

@@ -1,0 +1,73 @@
+@CHARSET "ISO-8859-1";
+#conteneur {
+width:600px; 
+margin:auto;
+height:auto;
+}
+#entete {
+/* styles de caractères */ 
+font:Verdana, Geneva, sans-serif;
+font-size: 25px; 
+color: #40427f; 
+text-align: center;
+/* marges et bordures */
+padding:20px;
+margin: 0px 0 30px 0;
+border:1px solid #777879;
+border-radius: 5px; 
+/* couleur de fond */
+background-color: #EAFDFF ;
+}
+label {
+/* positionnement marge et taille */
+float: left; 
+clear: left;
+margin: 10px 20px 0 0;
+width: 150px;
+/* styles de caractères */
+font:Verdana, Geneva, sans-serif;
+font-size: 14px;
+color: #445668;
+text-align: right; 
+}
+input {
+/* styles de caractères */
+font:Verdana, Geneva, sans-serif;
+font-size: 14px; 
+color: #4b4b4b; 
+
+}
+input[type=submit] {
+/* position taille marges */
+float: right; 
+cursor: pointer;
+width: 160px;
+height: 42px; 
+padding: 5px 10px; 
+margin: 0 40px 0 0;
+/* coins arrondies */
+border: 1px solid #275682;
+border-radius: 21px;
+/* fond */
+background-color: #0080FF;
+/* styles de texte */
+color:#effaff;
+font-weight:bold;
+}
+input:focus, textarea:focus {
+background: #d9dadc;
+}
+
+input[type=submit]:hover {
+border: 1px solid #1a3957;
+background-color:#51A8FF ;
+}
+
+input[type=submit]:active {
+background-color: #0079F2 ;
+}
+fieldset {
+background-color:#DFF4FF;
+border: 1px solid ;
+border-radius: 5px;
+}

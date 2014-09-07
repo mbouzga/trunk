@@ -7,6 +7,11 @@ public class LoginAction extends ActionSupport{
 	private String login;
 	private String psw;
 	private String prenom;
+	private String name;
+	private String email;
+	private String filliere;
+	private String entree;
+		
 	
 	public String execute(){
 		if("a".equals(login) && "1".equals(psw)){
@@ -14,6 +19,14 @@ public class LoginAction extends ActionSupport{
 		} else {
 			return ERROR;
 		}
+	}
+	public String SignIn()
+	{
+		if(name.isEmpty()&& email.isEmpty())
+		{
+			return ERROR;
+		}
+		else return SUCCESS;
 	}
 	
 	public String getLogin() {
@@ -36,5 +49,31 @@ public class LoginAction extends ActionSupport{
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getFilliere() {
+		return filliere;
+	}
+	public void setFilliere(String filliere) {
+		this.filliere = filliere;
+	}
+	public String getEntree() {
+		return entree;
+	}
+	public void setEntree(String entree) {
+		this.entree = entree;
+	}
+
+
 	
 }
