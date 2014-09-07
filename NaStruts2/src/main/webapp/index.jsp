@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="orange">
-	<s:form action="/test">
+	<s:form namespace="/" action="login">
 	<table>
 	<tbody>
 		<tr><td><s:label value="login" theme="simple"/></td> <td><s:textfield name="login" theme="simple"/></td></tr>
