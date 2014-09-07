@@ -6,6 +6,7 @@ public class LoginAction extends ActionSupport{
 
 	private String login;
 	private String psw;
+	private String prenom;
 	
 	public String execute(){
 		if("a".equals(login) && "1".equals(psw)){
@@ -26,6 +27,14 @@ public class LoginAction extends ActionSupport{
 	}
 	public void setPsw(String psw) {
 		this.psw = psw;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	
 }

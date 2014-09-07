@@ -13,6 +13,7 @@
 	<tbody>
 		<tr><td><s:label value="login" theme="simple"/></td> <td><s:textfield name="login" theme="simple"/></td></tr>
 		<tr><td><s:label value="Psw" theme="simple"/></td> <td><s:textfield name="psw" theme="simple"/></td></tr>
+		<tr><td><s:label value="Prenom" theme="simple"/></td> <td><s:textfield name="prenom" theme="simple"/></td></tr>
 		<tr><td></td> <td><s:submit value="Go !"/></td></tr>
 	</tbody>
 	</table>
