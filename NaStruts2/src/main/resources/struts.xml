@@ -16,6 +16,21 @@
 				method="SignIn">
 				<result name="success">/pages/bienvenu.jsp</result>
 				<result name="error">/ko.jsp</result>
+				<result name="input">/pages/Inscription.jsp</result>
+		</action>
+		<action name="validation" class="com.actions.ValidationAction">
+				<result name="success">/pages/Inscription.jsp</result>
+				<result name="input">/pages/validation.jsp</result>
+		</action>
+		<action name="validationXml" class="com.actions.ValidationXmlAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		    <interceptor-ref name="validation"> 
+		        <param name="excludeMethods">  
+		            input,back,cancel,browse  
+		        </param>
+		    </interceptor-ref>
+				<result name="success">/pages/Inscription.jsp</result>
+				<result name="input">/pages/validationXml.jsp</result>
 		</action>
 	</package>
 
