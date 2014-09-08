@@ -23,5 +23,8 @@
 	<br><a href="pages/validationXml.jsp">Validation avec fichier Xml</a>
 	<br><a href="pages/inscriptionPersonne.jsp">Inscription Personne</a>
 	</s:form>
+	<p>Vous etes ?</p>
+	<a href="pages/etudiant.jsp">Etudiant</a>
+	<a href="pages/prof.jsp">Professeur</a>
 </body>
 </html>
