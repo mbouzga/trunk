@@ -21,6 +21,7 @@
 	<a href="pages/Inscription.jsp">Sign-in</a>
 	<br><a href="pages/validation.jsp">Validation avec annotation</a>
 	<br><a href="pages/validationXml.jsp">Validation avec fichier Xml</a>
+	<br><a href="pages/inscriptionPersonne.jsp">Inscription Personne</a>
 	</s:form>
 </body>
 </html>

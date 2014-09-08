@@ -33,6 +33,10 @@
 				<result name="success">/pages/Inscription.jsp</result>
 				<result name="input">/pages/validationXml.jsp</result>
 		</action>
+		
+		<action name="inscriptionPersonne" class="com.actions.PersonneAction">
+				<result name="success">/pages/affichagePersonne.jsp</result>
+		</action>
 	</package>
 
 </struts>
