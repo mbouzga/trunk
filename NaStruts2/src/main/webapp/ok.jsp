@@ -10,5 +10,9 @@
 <body bgcolor="yellow">
 <h1>OKKK</h1>
 Bonjour Monsieur/Madame : <s:property value="prenom"/>
+
+<br>
+<hr><hr>
+Test d'internationalisation i18n : message egale = <s:property value="getText('com.test')" /> 
 </body>
 </html>
