@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Carte Personne</title>
 </head>
 <body>
 		<table border="1px">
@@ -13,6 +13,11 @@
 			<tr><td>Prenom</td><td><s:property value="personne.prenom"/></td></tr>
 			<tr><td>Age</td><td><s:property value="personne.age"/></td></tr>
 		</table>
-		
+		<s:if test="personne.age>18">
+  					Vous etes Majeur!
+			</s:if>
+			<s:else>
+ 				  Vous etes encore jeune pour ça ;)
+			</s:else>
 </body>
 </html>
