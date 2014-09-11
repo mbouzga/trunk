@@ -11,12 +11,12 @@ public class EtudiantAction extends ActionSupport {
 	
 	@Override
     public String execute() {
-		Etudiant et=new Etudiant();
-		et.setNom(etudiant.getNom());
-		et.setAge(etudiant.getAge());
-		et.setPrenom(etudiant.getPrenom());
-		listEtudiant.add(et);
-		System.out.println(listEtudiant.get(0).getNom());
+		//Etudiant et=new Etudiant(); 
+		//et.setNom(etudiant.getNom());
+		//et.setAge(etudiant.getAge());
+		//et.setPrenom(etudiant.getPrenom());
+		listEtudiant.add(etudiant);
+		//System.out.println(listEtudiant.get(0).getNom());
         return SUCCESS;
     }
 	public Etudiant getEtudiant() {
