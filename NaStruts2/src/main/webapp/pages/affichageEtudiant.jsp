@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,19 +10,17 @@
 </head>
 <body>
 	<tr>
-		<td>Nom</td>
-		<td>Prenom</td>
-		<td>Age</td>
+		<td align="center">Nom</td>
+		<td align="center">Prenom</td>
+		<td align="center">Age</td>
 	</tr>
-	<s:iterator value="listEtudiant">
-
-		<tr>
-			<td><s:property value="nom" /></td>
-			<td><s:property value="prenom" /></td>
-			<td><s:property value="age" /></td>
-		</tr>
-
-	</s:iterator>
+	<tr>
+		<s:iterator value="listEtudiant">
+			<td align="center"><s:property value="nom" /></td>
+			<td align="center"><s:property value="prenom" /></td>
+			<td align="center"><s:property value="age" /></td>
+		</s:iterator>
+	</tr>
 
 </body>
 </html>
