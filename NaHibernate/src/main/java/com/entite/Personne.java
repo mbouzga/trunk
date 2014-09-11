@@ -19,10 +19,10 @@ public class Personne {
     @Column(name = "NOM")
     private String nom;
 
-    @Column(name = "NOM")
+    @Column(name = "PRENOM")
     private String prenom;
 
-    @Column(name = "PRENOM")
+    @Column(name = "AGE")
     private Integer age;
 
     /**

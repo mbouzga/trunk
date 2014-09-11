@@ -21,7 +21,7 @@ public interface IDao<T> {
 
     void creat(T o);
 
-    T read(Class<T> c, Integer id);
+    T read(Class<T> c, Long id);
 
     T update(T o);
 

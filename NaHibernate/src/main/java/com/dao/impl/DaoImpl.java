@@ -2,7 +2,8 @@ package com.dao.impl;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 import com.dao.IDao;
 
@@ -16,34 +17,44 @@ import com.dao.IDao;
  * @author $Author$
  * @version $Revision$
  */
+
 public class DaoImpl<T> implements IDao<T> {
 
-    @PersistenceUnit(unitName = "naHibernate")
-    private EntityManagerFactory entityManagerFactory;
+    // @PersistenceUnit(unitName = "naHibernate")
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("naHibernate");;
 
     protected EntityManager entityManager;
+    private EntityTransaction transactionManager;
 
     private Class<T> maClass;
 
     public DaoImpl() {
         super();
         entityManager = entityManagerFactory.createEntityManager();
+        transactionManager = entityManager.getTransaction();
     }
 
     public void creat(final T o) {
+        transactionManager.begin();
         entityManager.persist(o);
+        transactionManager.commit();
     }
 
-    public T read(final Class<T> c, final Integer id) {
+    public T read(final Class<T> c, final Long id) {
         return entityManager.find(c, id);
     }
 
     public T update(final T o) {
-        return entityManager.merge(o);
+        transactionManager.begin();
+        T oUpdate = entityManager.merge(o);
+        transactionManager.commit();
+        return oUpdate;
     }
 
     public void delete(final T o) {
-        entityManager.refresh(o);
+        transactionManager.begin();
+        entityManager.remove(o);
+        transactionManager.commit();
     }
 
     /**
@@ -90,4 +101,5 @@ public class DaoImpl<T> implements IDao<T> {
     public final void setEntityManagerFactory(final EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
     }
+
 }
