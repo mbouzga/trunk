@@ -22,6 +22,10 @@
 	<br><a href="pages/validation.jsp">Validation avec annotation</a>
 	<br><a href="pages/validationXml.jsp">Validation avec fichier Xml</a>
 	<br><a href="pages/inscriptionPersonne.jsp">Inscription Personne</a>
+	<br><a href="pages/InscriptionEtudiant.jsp">Etudiant</a>
+	<br><a href="pages/InscriptionProfesseur.jsp">Professeur</a>
+	<br><a href="pages/AjoutMatiere.jsp">Ajouter Matiere (Espace admin)</a>
+	<br><a href="pages/affichageMatiere.jsp">Liste des matieres </a>	
 	</s:form>
 
 </body>
