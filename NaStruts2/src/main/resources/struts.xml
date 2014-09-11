@@ -37,6 +37,16 @@
 		<action name="inscriptionPersonne" class="com.actions.PersonneAction">
 				<result name="success">/pages/affichagePersonne.jsp</result>
 		</action>
+		<action name="inscriptionEtudiant" class="com.actions.EtudiantAction">
+				<result name="success">/pages/affichageEtudiant.jsp</result>
+		</action>
+		<action name="inscriptionProfesseur" class="com.actions.ProfesseurAction">
+				<result name="success">/pages/affichageProfesseur.jsp</result>
+		</action>
+				
+		<action name="AjoutMatiere" class="com.actions.MatiereAction">
+				<result name="success">/pages/affichageMatiere.jsp</result>
+		</action>
 	</package>
 
 </struts>
