@@ -40,6 +40,14 @@
 		<action name="inscriptionEtudiant" class="com.actions.EtudiantAction">
 				<result name="success">/pages/affichageEtudiant.jsp</result>
 		</action>
+		<action name="ajoutEtudiant" class="com.actions.EtudiantAction">
+				<result name="success">/pages/InscriptionEtudiant.jsp</result>
+		</action>
+		<action name="listerEtudiants" class="com.actions.EtudiantAction"
+				method="lister">
+				<result name="success">/pages/listeEtudiant.jsp</result>
+		</action>
+		
 		<action name="inscriptionProfesseur" class="com.actions.ProfesseurAction">
 				<result name="success">/pages/affichageProfesseur.jsp</result>
 		</action>
