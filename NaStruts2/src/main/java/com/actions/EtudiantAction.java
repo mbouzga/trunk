@@ -10,15 +10,14 @@ public class EtudiantAction extends ActionSupport {
 	private ArrayList<Etudiant> listEtudiant= new ArrayList<Etudiant> ();
 	
 	@Override
-    public String execute() {
-		//Etudiant et=new Etudiant(); 
-		//et.setNom(etudiant.getNom());
-		//et.setAge(etudiant.getAge());
-		//et.setPrenom(etudiant.getPrenom());
+    public String execute() {		
 		listEtudiant.add(etudiant);
 		//System.out.println(listEtudiant.get(0).getNom());
         return SUCCESS;
     }
+	public String lister() {
+		return SUCCESS;
+	}
 	public Etudiant getEtudiant() {
 		return etudiant;
 	}
