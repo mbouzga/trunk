@@ -9,18 +9,22 @@
 <title>Liste Des Etudiants</title>
 </head>
 <body>
+<table>
 	<tr>
 		<td align="center">Nom</td>
 		<td align="center">Prenom</td>
 		<td align="center">Age</td>
 	</tr>
+	<br>
 	<tr>
 		<s:iterator value="listEtudiant">
-			<td align="center"><s:property value="nom" /></td>
-			<td align="center"><s:property value="prenom" /></td>
-			<td align="center"><s:property value="age" /></td>
+			<td align="center"><s:property value="etudiant.getNom()" /></td>
+			<td align="center"><s:property value="etudiant.prenom" /></td>
+			<td align="center"><s:property value="etudiant.age" /></td>
 		</s:iterator>
 	</tr>
+</table>
+
 
 </body>
 </html>
