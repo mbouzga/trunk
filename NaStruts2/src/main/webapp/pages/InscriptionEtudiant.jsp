@@ -14,7 +14,7 @@
 	<s:form action="inscriptionEtudiant" validate="true">
 		<table>
 			<tr>
-				<td>Nom</td><td><s:textfield name="etudiant.nom" theme="simple" /></td>
+				<td>Nom</td><td><s:textfield name="nom" id="nom" theme="simple" /></td>
 			</tr>
 			<tr>
 				<td>Prenom</td>
@@ -33,7 +33,6 @@
 		
 		
 	</s:form>
-	<a href="listeDesEtudiants">Liste des étudiants</a>
 
 </body>
 </html>
