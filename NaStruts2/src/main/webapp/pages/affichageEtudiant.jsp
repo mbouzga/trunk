@@ -18,12 +18,15 @@
 	<br>
 	<tr>
 		<s:iterator value="listEtudiant">
-			<td align="center"><s:property value="etudiant.getNom()" /></td>
+			<td align="center"><s:property value="etudiant.nom" /></td>
 			<td align="center"><s:property value="etudiant.prenom" /></td>
 			<td align="center"><s:property value="etudiant.age" /></td>
 		</s:iterator>
 	</tr>
 </table>
+	<a href="listerEtudiants.action">Liste des étudiants</a>
+
+<a href="ajoutEtudiant.action">Ajouter Etudiant</a><br/>
 
 
 </body>
