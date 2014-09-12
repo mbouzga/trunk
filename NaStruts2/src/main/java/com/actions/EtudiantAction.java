@@ -32,7 +32,11 @@ public class EtudiantAction extends ActionSupport {
 	public void setListEtudiant(ArrayList<Etudiant> listEtudiant) {
 		this.listEtudiant = listEtudiant;
 	}
-	
+	public void listE(){
+		for(int i=0;i<listEtudiant.size();i++){
+			System.out.println("nom:   "  +listEtudiant.get(i).getNom());
+		}
+	}
 	
 
 	
