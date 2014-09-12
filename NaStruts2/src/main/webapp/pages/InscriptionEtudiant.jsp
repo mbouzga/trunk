@@ -14,15 +14,15 @@
 	<s:form action="inscriptionEtudiant" validate="true">
 		<table>
 			<tr>
-				<td>Nom</td><td><s:textfield name="Etudiant.nom" theme="simple" /></td>
+				<td>Nom</td><td><s:textfield name="etudiant.nom" theme="simple" /></td>
 			</tr>
 			<tr>
 				<td>Prenom</td>
-				<td><s:textfield name="Etudiant.prenom" theme="simple" /></td>
+				<td><s:textfield name="etudiant.prenom" theme="simple" /></td>
 			</tr>
 			<tr>
 				<td>Age</td>
-				<td><s:textfield name="Etudiant.age" theme="simple" /></td>
+				<td><s:textfield name="etudiant.age" theme="simple" /></td>
 			</tr>
 			<tr>
 				<td></td>
@@ -33,6 +33,7 @@
 		
 		
 	</s:form>
+	<a href="listeDesEtudiants">Liste des étudiants</a>
 
 </body>
 </html>
