@@ -9,21 +9,17 @@
 <title>liste-Etudiant</title>
 </head>
 <body>
-	<s:if test="%{listEtudiant.size()>0}">
 		<s:iterator value="listEtudiant">
-			<br />
+			<br>
 			
 				Nom : <s:property value="nom" />
-			<br />
+			<br>
 				Prenom : <s:property value="age" />
-			<br />
+			<br>
 				Age : <s:property value="mail" />
-			<br />
+			<br>
 
 		</s:iterator>
-	</s:if>
-	<s:else>
-					Aucun etudiant dans la liste
-				</s:else>
+
 </body>
 </html>
