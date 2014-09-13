@@ -55,6 +55,10 @@
 		<action name="AjoutMatiere" class="com.actions.MatiereAction">
 				<result name="success">/pages/affichageMatiere.jsp</result>
 		</action>
+		
+		<action name="testCollection" class="com.actions.TestCollectionsAction">
+				<result name="success">/pages/testCollectionsAction.jsp</result>
+		</action>
 	</package>
 
 </struts>

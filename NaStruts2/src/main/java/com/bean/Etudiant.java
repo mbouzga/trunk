@@ -5,6 +5,18 @@ public class Etudiant {
 	private String nom;
     private String prenom;
     private Integer age;
+
+	public Etudiant() {
+		super();
+	}
+    
+	public Etudiant(String nom, String prenom, Integer age) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+	}
+
 	public String getNom() {
 		return nom;
 	}

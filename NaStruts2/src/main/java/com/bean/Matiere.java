@@ -1,9 +1,23 @@
 package com.bean;
 
 public class Matiere {
+	
 	private String nom;
 	private String filliere;
 	private String heures;
+	
+	
+	public Matiere() {
+		super();
+	}
+	
+	public Matiere(String nom, String filliere, String heures) {
+		super();
+		this.nom = nom;
+		this.filliere = filliere;
+		this.heures = heures;
+	}
+
 	public String getNom() {
 		return nom;
 	}

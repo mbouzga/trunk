@@ -6,7 +6,22 @@ public class Professeur {
 	private String prenom;
     private Integer age;
     private Matiere matiere;
-    public String getNom() {
+    
+    
+    public Professeur() {
+		super();
+	}
+    
+    
+	public Professeur(String nom, String prenom, Integer age) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.age = age;
+	}
+
+
+	public String getNom() {
 		return nom;
 	}
 	public void setNom(String nom) {
