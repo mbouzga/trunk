@@ -25,7 +25,8 @@
 	<br><a href="pages/InscriptionEtudiant.jsp">Etudiant</a>
 	<br><a href="pages/InscriptionProfesseur.jsp">Professeur</a>
 	<br><a href="pages/AjoutMatiere.jsp">Ajouter Matiere (Espace admin)</a>
-	<br><a href="pages/affichageMatiere.jsp">Liste des matieres </a>	
+	<br><a href="pages/affichageMatiere.jsp">Liste des matieres </a>
+	<br><s:a action="testCollection">Test Collection</s:a>	
 	</s:form>
 
 </body>
