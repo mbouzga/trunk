@@ -10,6 +10,7 @@ import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.bean.Etudiant;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class EtudiantAction extends ActionSupport implements SessionAware{
@@ -18,11 +19,14 @@ public class EtudiantAction extends ActionSupport implements SessionAware{
 	private ArrayList<Etudiant> listEtudiant;
 	
 	// Pour l'utilisation de session
-	private Map<String, Object> session;
+	private Map<String, Object> session = ActionContext.getContext().getSession();
 	
 	@SuppressWarnings("unchecked")
 	@Override
     public String execute() {
+		
+		System.out.println("Traitement dans l'action ... ");
+		
 		if(session.containsKey("listEtudiant")){
 			listEtudiant = (ArrayList<Etudiant>)session.get("listEtudiant");
 			listEtudiant.add(etudiant);

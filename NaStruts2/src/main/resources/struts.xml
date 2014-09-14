@@ -6,58 +6,78 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="false" />
-	<constant name="struts.custom.i18n.resources" value="message" /> 
+
+	<!-- Ici on active la gestion de l'internationalisation -->
+	<constant name="struts.custom.i18n.resources" value="message" />
 	<package name="default" namespace="/" extends="struts-default">
 
-	    <action name="login" class="com.actions.LoginAction">
+	    <!-- Déclaration des intercepteurs -->
+		<interceptors>
+		    <!-- Dans cette partie on declare nos intercepteur -->
+			<interceptor name="inscriptionEtudiantInterceptor"
+				class="com.intercepteurs.InscriptionEtudiantInterceptor"></interceptor>
+			
+			<!-- Dans cette partie on declare le nouveau stack d'intercepteur 
+				qui contient les intercepteur par defaut (prepare ...) + nos intercepteurs sinon les 
+				intercepteurs par defaut ne seroint jamais executés -->
+			<interceptor-stack name="notreNouveauStack">
+				<interceptor-ref name="inscriptionEtudiantInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="login" class="com.actions.LoginAction">
 			<result name="success">/ok.jsp</result>
 			<result name="error">/ko.jsp</result>
 		</action>
-		<action name="signin" class="com.actions.LoginAction"
-				method="SignIn">
-				<result name="success">/pages/bienvenu.jsp</result>
-				<result name="error">/ko.jsp</result>
-				<result name="input">/pages/Inscription.jsp</result>
+		<action name="signin" class="com.actions.LoginAction" method="SignIn">
+			<result name="success">/pages/bienvenu.jsp</result>
+			<result name="error">/ko.jsp</result>
+			<result name="input">/pages/Inscription.jsp</result>
 		</action>
 		<action name="validation" class="com.actions.ValidationAction">
-				<result name="success">/pages/Inscription.jsp</result>
-				<result name="input">/pages/validation.jsp</result>
+			<result name="success">/pages/Inscription.jsp</result>
+			<result name="input">/pages/validation.jsp</result>
 		</action>
 		<action name="validationXml" class="com.actions.ValidationXmlAction">
 			<interceptor-ref name="defaultStack"></interceptor-ref>
-		    <interceptor-ref name="validation"> 
-		        <param name="excludeMethods">  
-		            input,back,cancel,browse  
-		        </param>
-		    </interceptor-ref>
-				<result name="success">/pages/Inscription.jsp</result>
-				<result name="input">/pages/validationXml.jsp</result>
+			<interceptor-ref name="validation">
+				<param name="excludeMethods">
+					input,back,cancel,browse
+				</param>
+			</interceptor-ref>
+			<result name="success">/pages/Inscription.jsp</result>
+			<result name="input">/pages/validationXml.jsp</result>
+		</action>
+
+		<action name="inscriptionPersonne" class="com.actions.PersonneAction">
+			<result name="success">/pages/affichagePersonne.jsp</result>
 		</action>
 		
-		<action name="inscriptionPersonne" class="com.actions.PersonneAction">
-				<result name="success">/pages/affichagePersonne.jsp</result>
-		</action>
 		<action name="inscriptionEtudiant" class="com.actions.EtudiantAction">
-				<result name="success">/pages/affichageEtudiant.jsp</result>
+		    <!-- On ajoute notre nouveau stack d'intercepteurs pour intercepter toutes les action inscriptionEtudiant -->
+		    <interceptor-ref name="notreNouveauStack"></interceptor-ref>
+			<result name="success">/pages/affichageEtudiant.jsp</result>
 		</action>
+		
 		<action name="ajoutEtudiant" class="com.actions.EtudiantAction">
-				<result name="success">/pages/InscriptionEtudiant.jsp</result>
+			<result name="success">/pages/InscriptionEtudiant.jsp</result>
 		</action>
 		<action name="listerEtudiants" class="com.actions.EtudiantAction"
-				method="lister">
-				<result name="success">/pages/listeEtudiant.jsp</result>
+			method="lister">
+			<result name="success">/pages/listeEtudiant.jsp</result>
 		</action>
-		
+
 		<action name="inscriptionProfesseur" class="com.actions.ProfesseurAction">
-				<result name="success">/pages/affichageProfesseur.jsp</result>
+			<result name="success">/pages/affichageProfesseur.jsp</result>
 		</action>
-				
+
 		<action name="AjoutMatiere" class="com.actions.MatiereAction">
-				<result name="success">/pages/affichageMatiere.jsp</result>
+			<result name="success">/pages/affichageMatiere.jsp</result>
 		</action>
-		
+
 		<action name="testCollection" class="com.actions.TestCollectionsAction">
-				<result name="success">/pages/testCollectionsAction.jsp</result>
+			<result name="success">/pages/testCollectionsAction.jsp</result>
 		</action>
 	</package>
 
