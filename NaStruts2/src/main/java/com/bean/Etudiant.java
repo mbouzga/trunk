@@ -1,6 +1,13 @@
 package com.bean;
 
-public class Etudiant {
+import java.io.Serializable;
+
+public class Etudiant implements Serializable{
+	
+	/**
+	 * id de Serialization de l'etudiant
+	 */
+	private static final long serialVersionUID = 865960535623185719L;
 	
 	private String nom;
     private String prenom;

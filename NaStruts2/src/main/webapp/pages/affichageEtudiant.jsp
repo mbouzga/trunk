@@ -9,24 +9,25 @@
 <title>Liste Des Etudiants</title>
 </head>
 <body>
-<table>
-	<tr>
-		<td align="center">Nom</td>
-		<td align="center">Prenom</td>
-		<td align="center">Age</td>
-	</tr>
-	<br>
-	<tr>
+	<table border="2">
+		<tr>
+			<td align="center">Nom</td>
+			<td align="center">Prenom</td>
+			<td align="center">Age</td>
+		</tr>
+		<br>
 		<s:iterator value="listEtudiant">
-			<td align="center"><s:property value="etudiant.nom" /></td>
-			<td align="center"><s:property value="etudiant.prenom" /></td>
-			<td align="center"><s:property value="etudiant.age" /></td>
+			<tr>
+				<td align="center"><s:property value="nom" /></td>
+				<td align="center"><s:property value="prenom" /></td>
+				<td align="center"><s:property value="age" /></td>
+			</tr>
 		</s:iterator>
-	</tr>
-</table>
+	</table>
 	<a href="listerEtudiants.action">Liste des étudiants</a>
 
-<a href="ajoutEtudiant.action">Ajouter Etudiant</a><br/>
+	<a href="InscriptionEtudiant.jsp">Ajouter Etudiant</a>
+	<br />
 
 
 </body>
