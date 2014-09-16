@@ -30,7 +30,7 @@ public class LoginAction extends ActionSupport {
     }
 
     public String SignIn() {
-        if (name.isEmpty() && email.isEmpty()) {
+        if (name != null && email != null) {
             return ERROR;
         } else {
             return SUCCESS;
