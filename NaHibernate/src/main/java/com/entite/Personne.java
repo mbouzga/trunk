@@ -26,6 +26,39 @@ public class Personne {
     private Integer age;
 
     /**
+     * TODO description of constructor
+     */
+    public Personne() {
+        super();
+    }
+
+    /**
+     * @param id
+     * @param nom
+     * @param prenom
+     * @param age
+     */
+    public Personne(final Long id, final String nom, final String prenom, final Integer age) {
+        super();
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+    }
+
+    /**
+     * @param nom
+     * @param prenom
+     * @param age
+     */
+    public Personne(final String nom, final String prenom, final Integer age) {
+        super();
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+    }
+
+    /**
      * @return the id
      */
     public final Long getId() {

@@ -21,7 +21,7 @@ public class Main {
         // Exemple de lecture
         // Il faut changer l'id apres l'excution et donner un id existant dans la base sinn NPE
 
-        Personne personneLecture = personneDao.read(Personne.class, 14L);
+        Personne personneLecture = personneDao.read(Personne.class, 15L);
 
         System.out.println("********************************** Exemple de lecture **********************************");
         System.out.println("Nom : " + personneLecture.getNom());

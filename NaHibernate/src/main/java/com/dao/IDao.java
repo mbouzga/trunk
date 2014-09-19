@@ -26,4 +26,8 @@ public interface IDao<T> {
     T update(T o);
 
     void delete(T o);
+
+    // Méthode de déttachement de l'entité manager
+
+    void detach(T o);
 }

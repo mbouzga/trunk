@@ -5,33 +5,25 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import com.dao.IDao;
+import org.hibernate.Session;
 
-/**
- * TODO Short description of the class
- * 
- * <P>
- * TODO Detailed description of the use of the class.
- * </p>
- * 
- * @author $Author$
- * @version $Revision$
- */
+import com.dao.IDao;
 
 public class DaoImpl<T> implements IDao<T> {
 
     // @PersistenceUnit(unitName = "naHibernate")
-    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("naHibernate");;
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("naHibernate");
 
     protected EntityManager entityManager;
-    private EntityTransaction transactionManager;
-
+    protected EntityTransaction transactionManager;
+    protected Session sessionHibernate;
     private Class<T> maClass;
 
     public DaoImpl() {
         super();
         entityManager = entityManagerFactory.createEntityManager();
         transactionManager = entityManager.getTransaction();
+        sessionHibernate = (Session) entityManager.getDelegate();
     }
 
     public void creat(final T o) {
@@ -54,6 +46,12 @@ public class DaoImpl<T> implements IDao<T> {
     public void delete(final T o) {
         transactionManager.begin();
         entityManager.remove(o);
+        transactionManager.commit();
+    }
+
+    public void detach(final T o) {
+        transactionManager.begin();
+        entityManager.detach(o);
         transactionManager.commit();
     }
 
@@ -102,4 +100,33 @@ public class DaoImpl<T> implements IDao<T> {
         this.entityManagerFactory = entityManagerFactory;
     }
 
+    /**
+     * @return the transactionManager
+     */
+    public final EntityTransaction getTransactionManager() {
+        return transactionManager;
+    }
+
+    /**
+     * @param transactionManager
+     *            the transactionManager to set
+     */
+    public final void setTransactionManager(final EntityTransaction transactionManager) {
+        this.transactionManager = transactionManager;
+    }
+
+    /**
+     * @return the sessionHibernate
+     */
+    public final Session getSessionHibernate() {
+        return sessionHibernate;
+    }
+
+    /**
+     * @param sessionHibernate
+     *            the sessionHibernate to set
+     */
+    public final void setSessionHibernate(final Session sessionHibernate) {
+        this.sessionHibernate = sessionHibernate;
+    }
 }
