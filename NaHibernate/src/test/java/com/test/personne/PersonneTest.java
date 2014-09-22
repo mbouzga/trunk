@@ -22,6 +22,10 @@ public class PersonneTest {
 
     // Test avec les methode JPA
 
+    // ******************************************************************************************************//
+    // *-------------------------------------------- Test PERSIT -------------------------------------------*//
+    // ******************************************************************************************************//
+
     // Cas 1 : Création d'une entité qui n'est pas géré par l'entity manager (nouvelle création).
     @Test
     public void testCreatPersonneNotExist() {
@@ -36,7 +40,7 @@ public class PersonneTest {
         Personne personneManaged = personneDao.update(personne);
 
         // Cette création doit etre ignoré parce que c'est entité attaché au entité manager
-        personneDao.creat(personneManaged);
+        personneDao.creat(personne);
     }
 
     // Cas 3 : Création d'une entité détachée de l'entity manager.
@@ -46,8 +50,13 @@ public class PersonneTest {
         Personne personneManaged = personneDao.update(personne);
         personneDao.detach(personneManaged);
         // Exception normalement
+        System.out.println(personneDao.isDetached(personneManaged));
         personneDao.creat(personneManaged);
     }
+
+    // ******************************************************************************************************//
+    // *------------------------------------------- Test MERGE ----------------------------------------------*//
+    // ******************************************************************************************************//
 
     // Tests avec HQL
 

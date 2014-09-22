@@ -29,5 +29,7 @@ public interface IDao<T> {
 
     // Méthode de déttachement de l'entité manager
 
+    boolean isDetached(T o);
+
     void detach(T o);
 }

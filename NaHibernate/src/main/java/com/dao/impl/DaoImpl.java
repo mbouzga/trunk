@@ -51,8 +51,26 @@ public class DaoImpl<T> implements IDao<T> {
 
     public void detach(final T o) {
         transactionManager.begin();
+
+        if (entityManager.contains(o)) {
+            System.out.println("[AVANT-DETACH] L'instance " + o + " est gérée par l'entité manager");
+        } else {
+            System.out.println("[AVANT-DETACH] L'instance " + o + " n'est pas gérée par l'entité manager");
+        }
+
         entityManager.detach(o);
+
+        if (entityManager.contains(o)) {
+            System.out.println("[APRES-DETACH] L'instance " + o + " est gérée par l'entité manager");
+        } else {
+            System.out.println("[APRES-DETACH] L'instance " + o + " n'est pas gérée par l'entité manager");
+        }
+
         transactionManager.commit();
+    }
+
+    public boolean isDetached(final T o) {
+        return !entityManager.contains(o);
     }
 
     /**
