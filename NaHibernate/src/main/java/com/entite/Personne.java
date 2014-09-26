@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +15,7 @@ public class Personne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
+    @Column(name = "PERSONNE_ID")
     private Long id;
 
     @Column(name = "NOM")
@@ -24,6 +26,10 @@ public class Personne {
 
     @Column(name = "AGE")
     private Integer age;
+
+    @ManyToOne
+    @JoinColumn(name = "ENTREPRISE_ID")
+    private Entreprise entreprise;
 
     /**
      * TODO description of constructor
@@ -118,4 +124,18 @@ public class Personne {
         this.age = age;
     }
 
+    /**
+     * @return the entreprise
+     */
+    public final Entreprise getEntreprise() {
+        return entreprise;
+    }
+
+    /**
+     * @param entreprise
+     *            the entreprise to set
+     */
+    public final void setEntreprise(final Entreprise entreprise) {
+        this.entreprise = entreprise;
+    }
 }
