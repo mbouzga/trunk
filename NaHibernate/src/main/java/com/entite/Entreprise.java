@@ -41,7 +41,7 @@ public class Entreprise {
     /**
      * @return the id
      */
-    public final Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -49,14 +49,14 @@ public class Entreprise {
      * @param id
      *            the id to set
      */
-    public final void setId(final Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
     /**
      * @return the nom
      */
-    public final String getNom() {
+    public String getNom() {
         return nom;
     }
 
@@ -64,14 +64,14 @@ public class Entreprise {
      * @param nom
      *            the nom to set
      */
-    public final void setNom(final String nom) {
+    public void setNom(final String nom) {
         this.nom = nom;
     }
 
     /**
      * @return the activite
      */
-    public final String getActivite() {
+    public String getActivite() {
         return activite;
     }
 
@@ -79,14 +79,14 @@ public class Entreprise {
      * @param activite
      *            the activite to set
      */
-    public final void setActivite(final String activite) {
+    public void setActivite(final String activite) {
         this.activite = activite;
     }
 
     /**
      * @return the personnes
      */
-    public final List<Personne> getPersonnes() {
+    public List<Personne> getPersonnes() {
         return personnes;
     }
 
@@ -94,7 +94,7 @@ public class Entreprise {
      * @param personnes
      *            the personnes to set
      */
-    public final void setPersonnes(final List<Personne> personnes) {
+    public void setPersonnes(final List<Personne> personnes) {
         this.personnes = personnes;
     }
 }

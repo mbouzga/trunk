@@ -1,5 +1,6 @@
 package com.entite;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Personne {
     @Column(name = "AGE")
     private Integer age;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "ENTREPRISE_ID")
     private Entreprise entreprise;
 

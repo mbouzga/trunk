@@ -1,8 +1,8 @@
 package com.test.personne;
 
-import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import com.dao.IPersonneDao;
 import com.dao.impl.PersonneDaoImpl;
@@ -27,9 +27,14 @@ public class PersonneTest {
     @Before
     public void setUp() {
 
-        entreprise = EasyMock.createMock(Entreprise.class);
-        EasyMock.expect(entreprise.getId()).andReturn(1l);
-        EasyMock.replay(entreprise);
+        entreprise = Mockito.mock(Entreprise.class);
+        // EasyMock.expect(entreprise.getActivite()).andReturn("INFO");
+        // Mockito.when(entreprise.getActivite()).thenReturn("INFO-JAVA");
+        // Mockito.when(entreprise.getNom()).thenReturn("ENT-NAME-MOCKITO");
+
+        Mockito.doCallRealMethod().when(entreprise).setActivite("INFO-JAVA");
+        Mockito.doCallRealMethod().when(entreprise).setActivite("ENT-NAME-MOCKITO");
+        // EasyMock.replay(entreprise);
     }
 
     // Test avec les methode JPA
