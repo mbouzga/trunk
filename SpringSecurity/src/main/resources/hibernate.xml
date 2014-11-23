@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:sd="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd 
+           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd">
+	<!-- Hibernate session factory -->
+	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+		<property name="dataSource"> <ref bean="dataSource" /> </property> <property 
+		name="hibernateProperties"> <props> <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> 
+		<prop key="hibernate.show_sql">true</prop> </props> </property> <property 
+		name="annotatedClasses"> <list> <value>com.simple.entity.ProduitEntity</value> 
+		</list> </property> </bean> -->
+
+	<!-- Declare a transaction manager -->
+	<tx:annotation-driven />
+	<!-- <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"> 
+		<property name="sessionFactory"> <ref bean="sessionFactory"/> </property> 
+		</bean> -->
+
+	<!-- JPA entity manager -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+		</property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaPropertyMap" ref="jpaPropertyMap" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.entity</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- transaction management -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<util:map id="jpaPropertyMap" map-class="java.util.HashMap">
+		<entry key="hibernate.archive.autodetection" value="class" />
+		<!-- <entry key="hibernate.hbm2ddl.auto" value="create"/> -->
+		<entry key="hibernate.show_sql" value="true" />
+		<entry key="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+		<entry key="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
+		<entry key="hibernate.cache.use_second_level_cache" value="true" />
+		<entry key="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+		<entry key="hibernate.cache.use_query_cache" value="true" />
+	</util:map>
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tudu="http://sourceforge.net/tudu/schemas" elementFormDefault="qualified"
+	targetNamespace="http://sourceforge.net/tudu/schemas">
+
+	<xs:element name="GetTodosResponse">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="Todos" type="tudu:TodoType" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TodoType">
+		<xs:sequence>
+			<xs:element name="TodoId" type="xs:string" />
+			<xs:element name="Description" type="xs:string" />
+			<xs:element name="Priority" type="xs:int" />
+			<xs:element name="Completed" type="xs:boolean" />
+			<xs:element name="CreationDate" type="xs:date" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
