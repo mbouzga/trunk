@@ -3,7 +3,6 @@
   <display-name>petstore</display-name>
   <welcome-file-list>
     <welcome-file>categories.html</welcome-file>
-
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -24,5 +23,25 @@
   <servlet-mapping>
     <servlet-name>accesscontrole</servlet-name>
     <url-pattern>/accesscontrole</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>petcontrol</display-name>
+    <servlet-name>petcontrol</servlet-name>
+    <servlet-class>ma.ensao.pet_shop.petcontrol</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>petcontrol</servlet-name>
+    <url-pattern>/petcontrol</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>holidaycontrole</display-name>
+    <servlet-name>holidaycontrole</servlet-name>
+    <servlet-class>ma.ensao.pet_shop.holidaycontrole</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>holidaycontrole</servlet-name>
+    <url-pattern>/holidaycontrole</url-pattern>
   </servlet-mapping>
 </web-app>
