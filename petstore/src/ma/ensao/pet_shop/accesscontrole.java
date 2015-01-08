@@ -31,6 +31,7 @@ public class accesscontrole extends HttpServlet {
 //		Connection conn=  SingletonConnection.getConnection();
 		java.sql.Connection connection;
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/petshop_bd","root","root");
 		
 			PreparedStatement ps=(PreparedStatement) connection.prepareStatement("SELECT * FROM produits WHERE id_categorie=1");
@@ -44,13 +45,13 @@ public class accesscontrole extends HttpServlet {
 				p.setPrix(rs.getDouble("prix"));
 				prods.add(p);
 			}
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return prods;
 	}
-	public List <produits> prods= getProduits();
+	private List <produits> prods;
 
        
 
@@ -63,8 +64,10 @@ public class accesscontrole extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		ProduitModel mod = new ProduitModel();
+		prods = getProduits();
 		   mod.setProduits(prods);
 		   request.setAttribute("modele",mod);
+		   request.setAttribute("produits",prods);
 		   request.getRequestDispatcher("./accessoires.jsp").forward(request, response);
 
 	}
@@ -74,4 +77,13 @@ public class accesscontrole extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 
+
+	public List<produits> getProds() {
+		return prods;
+	}
+
+
+	public void setProds(List<produits> prods) {
+		this.prods = prods;
+	}
 }
