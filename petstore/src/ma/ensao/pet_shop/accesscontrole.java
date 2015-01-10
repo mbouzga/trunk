@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 import ma.ensao.bean.*;
 
 
@@ -43,6 +44,7 @@ public class accesscontrole extends HttpServlet {
 				p.setId(rs.getInt("id_produit"));
 				p.setNom(rs.getString("nom"));
 				p.setPrix(rs.getDouble("prix"));
+				p.setPhoto(rs.getString("photo"));
 				prods.add(p);
 			}
 		} catch (SQLException | ClassNotFoundException e) {
