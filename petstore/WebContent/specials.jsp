@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>pet shop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>Pet Shop</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
+
 </head>
 <body>
 <div id="wrap">
@@ -16,7 +17,7 @@
        
        	<div class="left_content">
         	
-            <div class="title"><span class="title_icon"><img src="image/bullet1.gif" alt="" title="" /></span>Cadeaux de vacances</div>
+            <div class="title"><span class="title_icon"><img src="image/bullet1.gif" alt="" title="" /></span>Special gifts</div>
         
         	
             
@@ -26,6 +27,7 @@
             	<div class="prod_img"><a href="ProduitServlet?paramId=${produit.id}"><img src="image/${produit.photo}" alt="" title="" class="thumb" border="0" /></a></div>
                 
                 <div class="prod_det_box">
+                <span class="special_icon"><img src="image/special_icon.gif" alt="" title="" /></span>
                 	<div class="box_top"></div>
                     <div class="box_center">
                     <div class="prod_title">
@@ -56,5 +58,6 @@
     
 
 </div>
+
 </body>
 </html>
