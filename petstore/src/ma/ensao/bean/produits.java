@@ -5,7 +5,42 @@ public class produits {
 	private int id;
 	private double prix;
 	private String categorie;
+	private String couleur;
+	private int nbr_stock;
+	private int promo;
+	private boolean special;
+	public String getCouleur() {
+		return couleur;
+	}
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+	public int getNbr_stock() {
+		return nbr_stock;
+	}
+	public void setNbr_stock(int nbr_stock) {
+		this.nbr_stock = nbr_stock;
+	}
+	public int getPromo() {
+		return promo;
+	}
+	public void setPromo(int promo) {
+		this.promo = promo;
+	}
+	public boolean getSpecial() {
+		return special;
+	}
+	public void setSpecial(boolean i) {
+		this.special = i;
+	}
 	private String Description;
+	private String photo;
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 	public String getNom() {
 		return nom;
 	}
