@@ -13,5 +13,5 @@
 			  http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<jaxws:client id="user" serviceClass="com.service.IUserService"
-		address="http://localhost:8080/CXFserver/services/users" />
+		address="http://localhost:8080/CXFServerSimple/services/users?wsdl" />
 </beans>
