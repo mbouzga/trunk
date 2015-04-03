@@ -10,7 +10,7 @@ import com.persistence.entity.UserEntity;
 @WebService(name="IUserService", serviceName="users")
 public interface IUserService {
 	
-	List<UserEntity> getAllUsers();
+//	List<UserEntity> getAllUsers();
 	
 	UserEntity findUserByLogin(@WebParam(name="login")String login);
 }
