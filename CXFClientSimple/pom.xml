@@ -24,7 +24,7 @@
 						<id>generate-sources</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+							<sourceRoot>${project.build.directory}/generated</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
 									<wsdl>http://localhost:8080/CXFServerSimple/services/users?wsdl</wsdl>
